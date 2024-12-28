@@ -1,23 +1,35 @@
+
+//createRouter创建路由实例
+//createWebHistory创建history模式的路由
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+import Login_index from '../views/Login/Login_index.vue'
+import Layout_index from '../views/Layout/Layout_index.vue'
+import Category_index from '../views/Category/Category_index.vue'
+import Home_index from '../views/Home/Home_index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      component: Layout_index,
+      children: [
+        {
+          path: '',//默认置空
+          component: Home_index,
+        },
+        {
+          path: 'Category',
+          component: Category_index,
+        }
+      ]
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
-  ],
+      path: '/Login',
+      component: Login_index
+    }
+  ]
 })
 
 export default router
