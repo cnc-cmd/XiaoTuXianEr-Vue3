@@ -3,7 +3,7 @@
 import Layout_Nav from './components/Layout_Nav.vue'
 import Layout_Header from './components/Layout_Header.vue'
 import Layout_Footer from './components/Layout_Footer.vue'
-import Layout_Fixed from './components/Layout_fixed.vue'
+import Layout_Fixed from './components/Layout_Fixed.vue'
 
 </script>
 
