@@ -5,6 +5,13 @@ import Layout_Header from './components/Layout_Header.vue'
 import Layout_Footer from './components/Layout_Footer.vue'
 import Layout_Fixed from './components/Layout_Fixed.vue'
 
+import { useCategoryStore } from '@/stores/category'
+import { onMounted } from 'vue'
+
+const categoryStore = useCategoryStore()
+
+onMounted(() => categoryStore.getCategory())
+
 </script>
 
 <template>
